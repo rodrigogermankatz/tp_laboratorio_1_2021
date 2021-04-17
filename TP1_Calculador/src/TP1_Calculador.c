@@ -38,24 +38,17 @@ int main(void) {
 				break;
 			case 3:
 				if(flagPrimerOperando && flagSegundoOperando){
-					printf("\n\t----------------");
-					printf("\n\t(A=%d) & (B=%d)", primerOperando, segundoOperando);
+					imprimirOperandos(primerOperando, segundoOperando);
 					flagCalculosHechos = hacerTodosLosCalculos(primerOperando, segundoOperando, &suma, &resta, &multiplicacion, &division, &primerFactorial, &segundoFactorial);
-					if(flagCalculosHechos) printf("\n\tCalculos hechos!");
-					printf("\n\t----------------\n");
 				} else {
-					printf("\n\t-------------------------------------------------------------");
-					printf("\n\tAntes de hacer los calculos tiene que ingresar los operandos!");
-					printf("\n\t-------------------------------------------------------------\n\n");
+					imprimirError("Antes de hacer los calculos tiene que ingresar los operandos!");
 				}
 				break;
 			case 4:
 				if(flagCalculosHechos){
 					informarResultados(primerOperando, segundoOperando, &suma, &resta, &multiplicacion, &division, &primerFactorial, &segundoFactorial);
 				} else {
-					printf("\n\t----------------------------------------------------------------");
-					printf("\n\tAntes de informar los calculos tiene que calcular!");
-					printf("\n\t----------------------------------------------------------------\n");
+					imprimirError("Antes de informar los calculos tiene que calcular!");
 				}
 				break;
 			case 5:
@@ -65,7 +58,7 @@ int main(void) {
 				salir = salirCalculadora();
 				break;
 			default:
-				printf("\n\tLa opcion del menu que ingreso es invalida!\n\tPor favor intente de vuelta.\n");
+				imprimirError("La opcion del menu que ingreso es invalida!\n\tPor favor intente de vuelta.");
 				fflush(stdin);
 				break;
 		}
@@ -73,4 +66,3 @@ int main(void) {
 	while (salir == 0);
 	return EXIT_SUCCESS;
 }
-

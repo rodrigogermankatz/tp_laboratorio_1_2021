@@ -35,6 +35,18 @@ int pedirOperando(int* operando){
     return resultado;
 }
 
+void imprimirError(char mensajeDeError[]){
+	printf("\n\t-------------------------------------------------------------");
+	printf("\n\t%s", mensajeDeError);
+	printf("\n\t-------------------------------------------------------------\n\n");
+}
+
+void imprimirOperandos(int primerOperando, int segundoOperando){
+	printf("\n\t-----------------");
+	printf("\n\t(A=%d) & (B=%d)", primerOperando, segundoOperando);
+	printf("\n\t-----------------");
+}
+
 int hacerTodosLosCalculos(int primerOperando, int segundoOperando, int *suma, int *resta, int *multiplicacion, float *division, int *primerFactorial, int *segundoFactorial){
     int resultado = 0;
     if(suma != NULL && resta != NULL && multiplicacion != NULL && division != NULL && primerFactorial != NULL && segundoFactorial != NULL){

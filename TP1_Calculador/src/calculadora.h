@@ -23,6 +23,23 @@ int salirCalculadora();
  */
 int pedirOperando(int* operando);
 
+/** \brief funcion que imprime un mensaje de error
+ *
+ * \param mensajeDeError[] char mensaje de error
+ * \return void no retorna
+ *
+ */
+void imprimirError(char mensajeDeError[]);
+
+/** \brief funcion que imprime los operandos sobre los que se realizan los calculos
+ *
+ * \param primerOperando int operandor a mostrar
+ * \param segundoOperando int operandor a mostrar
+ * \return void
+ *
+ */
+void imprimirOperandos(int primerOperando, int segundoOperando);
+
 /** \brief funcion que hace todos los calculos
   *
   * \param primerOperando int
